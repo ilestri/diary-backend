@@ -1,5 +1,27 @@
-반갑다. 이제 개발해야겠지?
+# 다이어리 백엔드 애플리케이션
 
-JAVA 17
-Spring Boot 3.3.1
-mysql 8.0.35
+## 기능
+
+- 사용자 등록 및 인증
+- JWT 기반 보안
+- 관계 관리
+- 일기 항목 생성 및 관리
+- 알림 시스템
+- RESTful API
+
+## 사용 기술
+
+- **Java 17**
+- **Spring Boot 3.3.1**
+- **MySQL 8.0.35**
+
+### 사전 요구 사항
+
+- Java 17 이상 설치
+- Maven 또는 Gradle 설치
+
+### 클론 및 빌드
+
+git clone https://github.com/your-repository/diary-backend.git
+cd diary-backend
+./gradlew clean build
