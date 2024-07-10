@@ -41,7 +41,7 @@ public class JwtTokenProvider {
 
         String refreshToken = Jwts.builder().setExpiration(new Date(now + 86400000)).signWith(key, SignatureAlgorithm.HS256).compact();
 
-        return JwtToken.builder().grantType("Bearer").accessToken(accessToken).refreshToken(refreshToken).build();
+        return JwtToken.builder().grantType("Bearer ").accessToken(accessToken).refreshToken(refreshToken).build();
     }
 
     public Authentication getAuthentication(String accessToken) {

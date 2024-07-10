@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +20,7 @@ import java.util.Collections;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "users")  // 테이블명은 소문자 "users"로 수정
+@Table(name = "users")
 public class USERS implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,12 +33,13 @@ public class USERS implements UserDetails {
     @Column(name = "email", length = 100, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "password", length = 255, nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -45,8 +47,13 @@ public class USERS implements UserDetails {
     }
 
     @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
     public String getUsername() {
-        return email;  // 이메일을 username으로 사용
+        return email;
     }
 
     @Override
@@ -66,6 +73,6 @@ public class USERS implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;  // 기본적으로 활성화된 계정으로 설정
+        return true;
     }
 }

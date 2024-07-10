@@ -29,13 +29,13 @@ public class MemberController {
             String email = signInReqDTO.getEmail();
             String password = signInReqDTO.getPassword();
             JwtToken jwtToken = memberService.login(email, password); // token 부여
-            String responseAccessToken = jwtToken.getAccessToken();
-            String responseRefreshToken = jwtToken.getRefreshToken();
+            String responseAccessToken = jwtToken.getGrantType() + jwtToken.getAccessToken();
+            String responseRefreshToken = jwtToken.getGrantType() + jwtToken.getRefreshToken();
             log.info("request email = {}, password = {}", email, password); // 후에 비밀번호 로그 제거 예정
-            log.info("jwtToken accessToken = {}, refreshToken = {}", jwtToken.getAccessToken(), jwtToken.getRefreshToken());
+            log.info("jwtToken accessToken = {}, refreshToken = {}", responseAccessToken, responseRefreshToken);
             return ResponseEntity.ok(new SignInResDTO(200, "Success", responseAccessToken, responseRefreshToken));
         } catch (SignInException e) {
-            return ResponseEntity.status(e.getStatus()).body(new SignInResDTO(e.getStatus().value(), e.getMessage(), null, null));
+            return ResponseEntity.status(e.getStatus()).body(new SignInResDTO(e.getStatus().value(), e.getMessage(), "", ""));
         } catch (Exception e) {
             e.printStackTrace();
             log.error("An unexpected error occurred: " + e.getMessage());
