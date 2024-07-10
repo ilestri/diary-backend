@@ -9,10 +9,13 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberSignupDto {
-    private String id;
+    private Long id;
     private String username;
 
-    static public MemberSignupDto toDto(USERS USERS) {
-        return MemberSignupDto.builder().id(USERS.getId()).username(USERS.getUsername()).build();
+    static public MemberSignupDto toDto(USERS user) {
+        return MemberSignupDto.builder()
+                .id(user.getId())
+                .username(user.getUsername())
+                .build();
     }
 }
