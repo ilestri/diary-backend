@@ -1,0 +1,49 @@
+# Java 관련
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+
+# 빌드 디렉터리
+/target/
+/build/
+
+# IDE 관련
+/.idea/
+/.project
+.classpath
+.settings/
+.vscode/
+
+# OS 관련
+.DS_Store
+Thumbs.db
+
+# 로그 파일
+*.log
+
+# 환경 설정 파일
+/application.properties
+/application.yml
+
+# Maven 관련
+/.mvn/
+/.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+
+# Gradle 관련
+.gradle
+/build/
+/out/
+/gradle/
+/gradlew
+/gradlew.bat
+gradle.properties
+gradle-local.properties
+
+# 기타
+!LICENSE
+!README.md
