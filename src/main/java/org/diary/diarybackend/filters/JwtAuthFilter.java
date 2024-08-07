@@ -18,6 +18,7 @@ import java.io.IOException;
 
 @RequiredArgsConstructor
 public class JwtAuthFilter extends GenericFilterBean {
+
     private final JwtTokenProvider jwtTokenProvider;
 
     private String resolveToken(HttpServletRequest request) {
@@ -29,7 +30,8 @@ public class JwtAuthFilter extends GenericFilterBean {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
@@ -43,12 +45,14 @@ public class JwtAuthFilter extends GenericFilterBean {
         } catch (ExpiredJwtException e) {
             res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             res.setContentType("application/json");
-            res.getWriter().write("{\"resultCode\": 401, \"resultMessage\": \"Expired JWT Token: " + e.getMessage() + "\", \"content\": \"\"}");
+            res.getWriter().write("{\"resultCode\": 401, \"resultMessage\": \"Expired JWT Token: "
+                    + e.getMessage() + "\", \"content\": \"\"}");
             return;
         } catch (Exception e) {
             res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             res.setContentType("application/json");
-            res.getWriter().write("{\"resultCode\": 401, \"resultMessage\": \"Invalid JWT Token: " + e.getMessage() + "\", \"content\": \"\"}");
+            res.getWriter().write("{\"resultCode\": 401, \"resultMessage\": \"Invalid JWT Token: "
+                    + e.getMessage() + "\", \"content\": \"\"}");
             return;
         }
 

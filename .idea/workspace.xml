@@ -4,10 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="Initial commit">
+    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="\">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Diary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Diary_Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Notification_Type.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Relationship.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Relationship_Status_History.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/User_Profile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/DiaryBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/DiaryBackendApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/RestTemplateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/JwtToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/JwtToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/MemberSignupDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/MemberSignupDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInResDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpResDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/USERS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/filters/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/filters/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/provider/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/provider/JwtTokenProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/repositories/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/repositories/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +45,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -35,6 +61,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -62,29 +95,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.diary-backend 빌드.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.DiaryBackendApplication.executor": "Run",
-    "git-widget-placeholder": "develop",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/zibago/Diary/diary-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.diary-backend 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DiaryBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zibago/Diary/diary-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="DiaryBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -94,6 +127,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18968.26" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18968.26" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -109,6 +150,9 @@
       <workItem from="1722421204279" duration="4000" />
       <workItem from="1722421634923" duration="803000" />
       <workItem from="1722429135108" duration="1785000" />
+      <workItem from="1723013597282" duration="4418000" />
+      <workItem from="1723018644791" duration="1175000" />
+      <workItem from="1723019843127" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />

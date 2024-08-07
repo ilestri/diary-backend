@@ -22,6 +22,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
+
     private final JwtTokenProvider jwtTokenProvider;
 
     @Bean
@@ -30,15 +31,19 @@ public class SecurityConfig {
                 // REST API이므로 basic auth 및 csrf 보안을 사용하지 않음
                 .httpBasic(withDefaults()).csrf(csrf -> csrf.disable())
                 // JWT 사용하기 때문에 세션을 사용하지 않음
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).authorizeHttpRequests(auth -> auth
+                .sessionManagement(
+                        session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth
                         // 해당 API에 대해서는 모든 요청을 허가
-                        .requestMatchers("/user/sign_up").permitAll().requestMatchers("/user/sign_in").permitAll()
+                        .requestMatchers("/user/sign_up").permitAll()
+                        .requestMatchers("/user/sign_in").permitAll()
                         // ADMIN 권한이 있어야 요청할 수 있음
                         .requestMatchers("/user/test").hasRole("ADMIN")
                         // 이 밖에 모든 요청에 대해서 인증 필요
                         .anyRequest().authenticated())
                 // JWT 인증을 위하여 직접 구현한 필터를 UsernamePasswordAuthenticationFilter 전에 실행
-                .addFilterBefore(new JwtAuthFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(new JwtAuthFilter(jwtTokenProvider),
+                        UsernamePasswordAuthenticationFilter.class);
 
         // CORS 설정 추가
         httpSecurity.cors(withDefaults());

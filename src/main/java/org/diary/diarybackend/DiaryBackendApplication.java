@@ -29,8 +29,10 @@ public class DiaryBackendApplication {
 
     private static ApplicationListener<?>[] applicationListeners() {
         return new ApplicationListener[]{
-                (ApplicationListener<ContextRefreshedEvent>) event -> logger.info("Application started..."),
-                (ApplicationListener<ContextStoppedEvent>) event -> logger.info("Application stopped...")
+                (ApplicationListener<ContextRefreshedEvent>) event -> logger.info(
+                        "Application started..."),
+                (ApplicationListener<ContextStoppedEvent>) event -> logger.info(
+                        "Application stopped...")
         };
     }
 }

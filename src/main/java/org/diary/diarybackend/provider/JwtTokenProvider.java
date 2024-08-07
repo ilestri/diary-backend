@@ -18,11 +18,13 @@ import java.util.Date;
 @Slf4j
 @Component
 public class JwtTokenProvider {
+
     private final Key key;
 
     private Claims parseClaims(String accessToken) {
         try {
-            return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(accessToken).getBody();
+            return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(accessToken)
+                    .getBody();
         } catch (ExpiredJwtException e) {
             return e.getClaims();
         }
@@ -37,11 +39,15 @@ public class JwtTokenProvider {
         long now = (new Date()).getTime();
 
         Date accessTokenExpiresIn = new Date(now + 86400000);
-        String accessToken = Jwts.builder().setSubject(authentication.getName()).setExpiration(accessTokenExpiresIn).signWith(key, SignatureAlgorithm.HS256).compact();
+        String accessToken = Jwts.builder().setSubject(authentication.getName())
+                .setExpiration(accessTokenExpiresIn).signWith(key, SignatureAlgorithm.HS256)
+                .compact();
 
-        String refreshToken = Jwts.builder().setExpiration(new Date(now + 86400000)).signWith(key, SignatureAlgorithm.HS256).compact();
+        String refreshToken = Jwts.builder().setExpiration(new Date(now + 86400000))
+                .signWith(key, SignatureAlgorithm.HS256).compact();
 
-        return JwtToken.builder().grantType("Bearer ").accessToken(accessToken).refreshToken(refreshToken).build();
+        return JwtToken.builder().grantType("Bearer ").accessToken(accessToken)
+                .refreshToken(refreshToken).build();
     }
 
     public Authentication getAuthentication(String accessToken) {
