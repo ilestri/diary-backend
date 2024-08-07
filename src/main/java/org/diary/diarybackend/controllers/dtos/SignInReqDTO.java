@@ -8,6 +8,7 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 public class SignInReqDTO {
+
     private String email;
     private String password;
 }

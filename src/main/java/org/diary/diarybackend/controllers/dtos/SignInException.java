@@ -4,6 +4,7 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 public class SignInException extends RuntimeException {
+
     @Getter
     private final HttpStatus status;
     private final String message;

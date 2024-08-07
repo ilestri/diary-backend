@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SignUpResDTO {
+
     private int resultCode;
     private String resultMessage;
     private String result;
