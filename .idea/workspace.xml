@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="\">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Diary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Diary_Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Notification_Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Relationship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/Relationship_Status_History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/User_Profile.java" afterDir="false" />
+    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="추가 파일들 수정 진행중">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/DiaryBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/DiaryBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/RestTemplateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/RestTemplateConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/configs/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/JwtToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/JwtToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/MemberSignupDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/MemberSignupDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInReqDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignInResDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpResDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpResDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/entities/USERS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/filters/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/filters/JwtAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/provider/JwtTokenProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/provider/JwtTokenProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/repositories/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/repositories/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,6 +56,31 @@
     &quot;assignee&quot;: &quot;ilestri&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="DB개편" />
+                    <option name="lastUsedInstant" value="1723019928" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1723019927" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/ilestri/diary-backend&quot;,
@@ -104,7 +107,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.DiaryBackendApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;DB개편&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/zibago/Diary/diary-backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -153,6 +156,8 @@
       <workItem from="1723013597282" duration="4418000" />
       <workItem from="1723018644791" duration="1175000" />
       <workItem from="1723019843127" duration="11000" />
+      <workItem from="1723019866937" duration="1243000" />
+      <workItem from="1723075664075" duration="1970000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -194,7 +199,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720575833316</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="엔티티 추가 및 수정">
+      <option name="closed" value="true" />
+      <created>1723020009047</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723020009047</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dto수정">
+      <option name="closed" value="true" />
+      <created>1723020045584</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723020045584</updated>
+    </task>
+    <task id="LOCAL-00008" summary="추가 파일들 수정 진행중">
+      <option name="closed" value="true" />
+      <created>1723020068638</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723020068638</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +231,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="엔티티 추가 및 수정" />
+    <MESSAGE value="dto수정" />
+    <MESSAGE value="추가 파일들 수정 진행중" />
+    <option name="LAST_COMMIT_MESSAGE" value="추가 파일들 수정 진행중" />
   </component>
 </project>

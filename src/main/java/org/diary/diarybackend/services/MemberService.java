@@ -44,10 +44,8 @@ public class MemberService { // 서비스 클래스 - 로그인 메서드 구현
 
     @Transactional
     public MemberSignupDto signUp(SignUpReqDto signUpReqDto) {
-        log.info("회원가입 시도 Email: {}", signUpReqDto.getEmail());
 
         if (usersRepository.existsByEmail(signUpReqDto.getEmail())) {
-            log.warn("회원가입 실패 : Email 중복 : ", signUpReqDto.getEmail());
             throw new IllegalArgumentException("이미 사용중인 이메일 입니다.");
         }
         // Password 암호화
@@ -56,8 +54,10 @@ public class MemberService { // 서비스 클래스 - 로그인 메서드 구현
         // 회원가입 시, USER 역할 부여
         User user = User.builder()
                 .username(signUpReqDto.getUsername())
+                .phoneNumber(signUpReqDto.getPhone_number())
                 .email(signUpReqDto.getEmail())
                 .password(encodedPassword)
+                .birthdate(signUpReqDto.getBirthdate())
                 .build();
 
         usersRepository.save(user);

@@ -51,7 +51,6 @@ public class MemberController {
 
     @PostMapping(value = "/sign_up")
     public ResponseEntity<SignUpResDTO> signUp(@RequestBody SignUpReqDto signUpReqDto) {
-        log.debug("Received signUp request with email: {}", signUpReqDto.getEmail());
         try {
             // SignUpReqDto 생성시 포맷팅 및 유효성 검사
             signUpReqDto = new SignUpReqDto(
@@ -64,14 +63,14 @@ public class MemberController {
             );
 
             memberService.signUp(signUpReqDto);
-            log.debug("SignUp Success: {}", signUpReqDto.getEmail());
+            log.debug("회원가입 성공: {}", signUpReqDto.getEmail());
             return ResponseEntity.ok(new SignUpResDTO(200, "Success", "JWT 보내기 수정"));
         } catch (IllegalArgumentException e) {
-            log.error("SignUp Failure: {}", e.getMessage());
+            log.error("회원가입 실패: {}", e.getMessage());
             return ResponseEntity.badRequest()
                     .body(new SignUpResDTO(400, e.getMessage(), "Failure"));
         } catch (Exception e) {
-            log.error("Internal Server Error: {}", e.getMessage());
+            log.error("서버 오류: {}", e.getMessage());
             return ResponseEntity.internalServerError()
                     .body(new SignUpResDTO(500, e.getMessage(), "Failure"));
         }
