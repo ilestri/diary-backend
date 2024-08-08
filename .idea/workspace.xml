@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="추가 파일들 수정 진행중">
+    <list default="true" id="1340da4e-2e6c-43d2-966c-76726def11c7" name="변경" comment="파일 수정 완료">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/repositories/UserProfileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/MemberController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/controllers/dtos/SignUpReqDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/diary/diarybackend/services/MemberService.java" afterDir="false" />
@@ -28,12 +30,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="diary-backend" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -65,12 +62,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="DB개편" />
-                    <option name="lastUsedInstant" value="1723019928" />
+                    <option name="branchName" value="로그인-수정" />
+                    <option name="lastUsedInstant" value="1723079024" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1723019927" />
+                    <option name="lastUsedInstant" value="1723079009" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="DB개편" />
+                    <option name="lastUsedInstant" value="1723019928" />
                   </RecentBranch>
                 </list>
               </option>
@@ -107,7 +108,7 @@
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.DiaryBackendApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;DB개편&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;로그인-수정&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/zibago/Diary/diary-backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -121,6 +122,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.diary.diarybackend.repositories" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DiaryBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
@@ -157,7 +163,8 @@
       <workItem from="1723018644791" duration="1175000" />
       <workItem from="1723019843127" duration="11000" />
       <workItem from="1723019866937" duration="1243000" />
-      <workItem from="1723075664075" duration="1970000" />
+      <workItem from="1723075664075" duration="8577000" />
+      <workItem from="1723091781349" duration="5955000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -223,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723020068638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="파일 수정 완료">
+      <option name="closed" value="true" />
+      <created>1723078993851</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723078993851</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +249,7 @@
     <MESSAGE value="엔티티 추가 및 수정" />
     <MESSAGE value="dto수정" />
     <MESSAGE value="추가 파일들 수정 진행중" />
-    <option name="LAST_COMMIT_MESSAGE" value="추가 파일들 수정 진행중" />
+    <MESSAGE value="파일 수정 완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="파일 수정 완료" />
   </component>
 </project>

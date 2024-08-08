@@ -1,15 +1,17 @@
 package org.diary.diarybackend.controllers.dtos;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.diary.diarybackend.entities.User;
 
-import java.util.regex.Pattern;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Getter
 @Builder
@@ -17,69 +19,26 @@ import java.util.regex.Pattern;
 @AllArgsConstructor
 public class SignUpReqDto {
 
+    @NotBlank(message = "Username cannot be blank")
     private String username;
+
+    @NotBlank(message = "Nickname cannot be blank")
     private String nickname;
+
+    @NotBlank(message = "Phone number cannot be blank")
+    @Pattern(regexp = "\\d{10,15}", message = "Invalid phone number format")
     private String phone_number;
+
+    @NotBlank(message = "Email cannot be blank")
+    @Email(message = "Invalid email format")
     private String email;
+
+    @NotBlank(message = "Password cannot be blank")
+    @Size(min = 6, message = "Password must be at least 6 characters long")
     private String password;
+
+    @NotNull(message = "Birthdate cannot be null")
     private LocalDate birthdate;
-
-    public SignUpReqDto(String username, String nickname, String phone_number, String email,
-            String password, String birthdate) {
-        if (username == null || nickname == null || password == null) {
-            throw new IllegalArgumentException("Username, nickname and password cannot be null");
-        }
-
-        this.username = username;
-        this.nickname = nickname;
-        this.phone_number = formatPhoneNumber(phone_number);
-        this.email = formatEmail(email);
-        this.password = password;
-        this.birthdate = formatBirthdate(birthdate);
-
-        System.out.println("생성자 사용");
-        System.out.println("username: " + this.username);
-        System.out.println("nickname: " + this.nickname);
-        System.out.println("phone_number: " + this.phone_number);
-        System.out.println("email: " + this.email);
-        System.out.println("password: " + this.password);
-        System.out.println("birthdate: " + this.birthdate);
-    }
-
-    private String formatPhoneNumber(String phone_number) {
-        if (phone_number == null) {
-            throw new IllegalArgumentException("Phone number cannot be null");
-        }
-        // 휴대폰 번호 포맷팅 로직
-        return phone_number.replaceAll("\\D", ""); // 숫자만 남기기
-    }
-
-    private String formatEmail(String email) {
-        if (email == null) {
-            throw new IllegalArgumentException("Email cannot be null");
-        }
-        // 이메일 포맷팅 및 유효성 검사 로직
-        String emailPattern = "^[A-Za-z0-9+_.-]+@(.+)$";
-        if (Pattern.matches(emailPattern, email)) {
-            return email.toLowerCase();
-        } else {
-            throw new IllegalArgumentException("Invalid email format");
-        }
-    }
-
-    private LocalDate formatBirthdate(String birthdate) {
-        if (birthdate == null) {
-            throw new IllegalArgumentException("Birthdate cannot be null");
-        }
-        // 생년월일 포맷팅 로직
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-            return LocalDate.parse(birthdate, formatter);
-        } catch (DateTimeParseException e) {
-            throw new IllegalArgumentException(
-                    "Invalid birthdate format. Expected format: yyyy-MM-dd");
-        }
-    }
 
     public User toEntity(String encodedPassword) {
         return User.builder()

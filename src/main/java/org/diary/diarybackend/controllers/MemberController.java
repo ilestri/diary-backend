@@ -1,5 +1,6 @@
 package org.diary.diarybackend.controllers;
 
+import java.util.stream.Collectors;
 import org.diary.diarybackend.controllers.dtos.*;
 import org.diary.diarybackend.services.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,31 +52,29 @@ public class MemberController {
         }
     }
 
+    // 예외처리 다시 해야함 일단 구현만 함
     @PostMapping(value = "/sign_up")
-    public ResponseEntity<SignUpResDTO> signUp(@RequestBody SignUpReqDto signUpReqDto) {
-        try {
-            // SignUpReqDto 생성시 포맷팅 및 유효성 검사
-            signUpReqDto = new SignUpReqDto(
-                    signUpReqDto.getUsername(),
-                    signUpReqDto.getNickname(),
-                    signUpReqDto.getPhone_number(),
-                    signUpReqDto.getEmail(),
-                    signUpReqDto.getPassword(),
-                    signUpReqDto.getBirthdate()
-            );
+    public ResponseEntity<SignUpResDTO> signUp(@Validated @RequestBody SignUpReqDto signUpReqDto,
+            BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            String errorMessages = bindingResult.getFieldErrors().stream()
+                    .map(fieldError -> fieldError.getField() + ": "
+                            + fieldError.getDefaultMessage()).collect(Collectors.joining(", "));
+            log.error("회원가입 실패: {}", errorMessages);
+            return ResponseEntity.badRequest()
+                    .body(new SignUpResDTO(HttpStatus.BAD_REQUEST.value(), errorMessages,
+                            "Failure"));
+        }
 
+        try {
             memberService.signUp(signUpReqDto);
             log.debug("회원가입 성공: {}", signUpReqDto.getEmail());
             return ResponseEntity.ok(new SignUpResDTO(200, "Success", "JWT 보내기 수정"));
-        } catch (IllegalArgumentException e) {
-            log.error("회원가입 실패: {}", e.getMessage());
-            return ResponseEntity.badRequest()
-                    .body(new SignUpResDTO(400, e.getMessage(), "Failure"));
         } catch (Exception e) {
             log.error("서버 오류: {}", e.getMessage());
             return ResponseEntity.internalServerError()
-                    .body(new SignUpResDTO(500, e.getMessage(), "Failure"));
+                    .body(new SignUpResDTO(HttpStatus.BAD_REQUEST.value(), e.getMessage(),
+                            "Failure"));
         }
     }
 }
-

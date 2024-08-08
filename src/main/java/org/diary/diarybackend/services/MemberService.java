@@ -4,8 +4,10 @@ import org.diary.diarybackend.controllers.dtos.JwtToken;
 import org.diary.diarybackend.controllers.dtos.MemberSignupDto;
 import org.diary.diarybackend.controllers.dtos.SignUpReqDto;
 import org.diary.diarybackend.entities.User;
+import org.diary.diarybackend.entities.User_Profile;
 import org.diary.diarybackend.provider.JwtTokenProvider;
 import org.diary.diarybackend.repositories.UsersRepository;
+import org.diary.diarybackend.repositories.UserProfileRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class MemberService { // 서비스 클래스 - 로그인 메서드 구현
 
     private final UsersRepository usersRepository;
+    private final UserProfileRepository userProfileRepository;
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
     private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
@@ -60,10 +63,20 @@ public class MemberService { // 서비스 클래스 - 로그인 메서드 구현
                 .birthdate(signUpReqDto.getBirthdate())
                 .build();
 
-        usersRepository.save(user);
+        // User 엔티티 저장
+        User savedUser = usersRepository.save(user);
+
+        log.info("id값 : {}", savedUser);
+        // User_Profile 엔티티 생성 및 저장
+        User_Profile userProfile = User_Profile.builder()
+                .user(user)
+                .nickname(signUpReqDto.getNickname())
+                .build();
+
+        userProfileRepository.save(userProfile);
 
         log.info("회원가입 성공 Email: {}", signUpReqDto.getEmail());
 
-        return MemberSignupDto.toDto(user);
+        return MemberSignupDto.toDto(savedUser);
     }
 }
