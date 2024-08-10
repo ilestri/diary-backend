@@ -11,5 +11,5 @@ public class SignUpResDTO {
 
     private int resultCode;
     private String resultMessage;
-    private String result;
+    private String data;
 }

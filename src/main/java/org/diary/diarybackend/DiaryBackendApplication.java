@@ -15,14 +15,8 @@ public class DiaryBackendApplication {
     private static final Logger logger = LoggerFactory.getLogger(DiaryBackendApplication.class);
 
     public static void main(String[] args) {
-        // SpringApplication.run(DiaryBackendApplication.class, args);
-
-        // More complex application startup with SpringApplicationBuilder
-        new SpringApplicationBuilder(DiaryBackendApplication.class)
-                .bannerMode(Banner.Mode.CONSOLE)
-                .logStartupInfo(true)
-                .listeners(applicationListeners())
-                .run(args);
+        new SpringApplicationBuilder(DiaryBackendApplication.class).bannerMode(Banner.Mode.CONSOLE)
+                .logStartupInfo(true).listeners(applicationListeners()).run(args);
 
         System.out.println("##### diary-server start #####");
     }
@@ -32,7 +26,6 @@ public class DiaryBackendApplication {
                 (ApplicationListener<ContextRefreshedEvent>) event -> logger.info(
                         "Application started..."),
                 (ApplicationListener<ContextStoppedEvent>) event -> logger.info(
-                        "Application stopped...")
-        };
+                        "Application stopped...")};
     }
 }

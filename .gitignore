@@ -10,11 +10,12 @@
 /build/
 
 # IDE 관련
-/.idea/
-/.project
+.idea/
+.project
 .classpath
 .settings/
 .vscode/
+.idea/workspace.xml
 
 # OS 관련
 .DS_Store
