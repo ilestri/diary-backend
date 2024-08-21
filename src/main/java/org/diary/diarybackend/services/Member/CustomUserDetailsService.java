@@ -1,4 +1,4 @@
-package org.diary.diarybackend.services;
+package org.diary.diarybackend.services.Member;
 
 import org.diary.diarybackend.entities.User;
 import org.diary.diarybackend.repositories.UsersRepository;
