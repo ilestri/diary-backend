@@ -1,4 +1,4 @@
-package org.diary.diarybackend.controllers.dtos;
+package org.diary.diarybackend.controllers.dtos.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +17,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignUpReqDto {
+public class SignUpReqDTO {
 
     @NotBlank(message = "Username cannot be blank")
     private String username;

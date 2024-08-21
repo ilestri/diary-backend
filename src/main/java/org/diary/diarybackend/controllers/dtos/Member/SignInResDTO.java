@@ -1,4 +1,4 @@
-package org.diary.diarybackend.controllers.dtos;
+package org.diary.diarybackend.controllers.dtos.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class SignInResDTO {
 
-    private int resultCode;
-    private String resultMessage;
     private String accessToken;
     private String refreshToken;
 }

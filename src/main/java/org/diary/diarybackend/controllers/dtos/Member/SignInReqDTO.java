@@ -1,4 +1,4 @@
-package org.diary.diarybackend.controllers.dtos;
+package org.diary.diarybackend.controllers.dtos.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

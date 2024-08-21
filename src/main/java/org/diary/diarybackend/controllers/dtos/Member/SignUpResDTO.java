@@ -1,4 +1,4 @@
-package org.diary.diarybackend.controllers.dtos;
+package org.diary.diarybackend.controllers.dtos.Member;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SignUpResDTO {
 
-    private int resultCode;
-    private String resultMessage;
-    private String data;
+    private String result;  // 회원가입 결과를 나타내는 필드
 }
