@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.Key;
 import java.util.Base64;
+import java.util.Collections;
 import java.util.Date;
 
 @Slf4j
@@ -53,8 +54,10 @@ public class JwtTokenProvider {
     public Authentication getAuthentication(String accessToken) {
         Claims claims = parseClaims(accessToken);
 
-        UserDetails principal = new User(claims.getSubject(), "", null);
-        return new UsernamePasswordAuthenticationToken(principal, "", null);
+        // 빈 권한 리스트로 설정
+        UserDetails principal = new User(claims.getSubject(), "", Collections.emptyList());
+
+        return new UsernamePasswordAuthenticationToken(principal, "", Collections.emptyList());
     }
 
     public String getUserIdFromToken(String token) {

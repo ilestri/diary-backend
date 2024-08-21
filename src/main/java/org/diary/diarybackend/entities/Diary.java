@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity // JPA 엔티티로 지정
 @Data // Lombok: getter, setter, toString, equals, hashCode 메서드 자동 생성
@@ -36,6 +37,10 @@ public class Diary {
     @CreationTimestamp // 생성 시점 자동 기록
     @Column(name = "created_date", nullable = false, updatable = false) // 널 불가, 수정 불가 지정
     private LocalDateTime createdDate; // 만들어진 시간
+
+    @UpdateTimestamp // 수정 시점 자동 기록
+    @Column(name = "updated_date", nullable = false) // 널 불가 지정
+    private LocalDateTime changedDate; // 마지막 수정 시간
 
     @ManyToOne(fetch = FetchType.LAZY) // 다대일 관계 설정, 지연 로딩
     @JoinColumn(name = "user_id", insertable = false, updatable = false) // 조인 컬럼명 지정
