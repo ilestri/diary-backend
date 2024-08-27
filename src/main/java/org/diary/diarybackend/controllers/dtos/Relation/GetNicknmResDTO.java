@@ -8,6 +8,7 @@ import lombok.Data;
 public class GetNicknmResDTO {
 
     private Long user_id;
+    private String username;
     private String nickname;
     private String profileImageUrl;
 }

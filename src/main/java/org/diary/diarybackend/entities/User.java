@@ -64,7 +64,7 @@ public class User implements UserDetails { // 클래스명도 일반적으로 �
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
 }
