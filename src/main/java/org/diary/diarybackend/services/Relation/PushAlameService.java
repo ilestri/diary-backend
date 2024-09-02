@@ -23,7 +23,7 @@ public class PushAlameService {
     private final RelationshipRepository relationshipRepository;
 
     @Transactional
-    public String PushAlame(PushAlarmReqDTO request, String token) throws Exception {
+    public String PushAlame(PushAlarmReqDTO request, String token) {
 
         // 요청자의 아이디
         String my_id;
