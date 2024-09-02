@@ -1,19 +1,18 @@
 package org.diary.diarybackend.services.Member;
 
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.diary.diarybackend.controllers.dtos.Member.SignUpReqDTO;
 import org.diary.diarybackend.controllers.dtos.Member.SignUpResDTO;
 import org.diary.diarybackend.entities.User;
 import org.diary.diarybackend.entities.User_Profile;
-import org.diary.diarybackend.repositories.UsersRepository;
 import org.diary.diarybackend.repositories.UserProfileRepository;
+import org.diary.diarybackend.repositories.UsersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
